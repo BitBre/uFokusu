@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         WebView myWebView = new WebView(getApplicationContext());
+        init();
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String url = extras.getString("url");
@@ -23,5 +24,9 @@ public class MainActivity extends AppCompatActivity {
             myWebView.loadUrl("https://www.ufokusu.rs");
         }
         setContentView(myWebView);
+    }
+
+    void init() {
+        getSupportActionBar().hide();
     }
 }
